@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: tungxd96/doc-render-service:drs-server
+    container_name: drs-server
+    build: .
+    command: npm run debug
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8080:8080"
