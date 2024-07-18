@@ -1,10 +1,10 @@
 FROM node:20-alpine
 
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
+RUN mkdir -p /root/app
+WORKDIR /root/app
 COPY ./package.json .
 RUN npm install
 COPY ./ .
 EXPOSE 8080
 
-CMD [ "node", "index.js" ]
+CMD [ "npm", "run", "start" ]
