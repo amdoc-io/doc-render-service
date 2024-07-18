@@ -5,7 +5,5 @@ services:
     build:
       context: .
     command: npm run start
-    volumes:
-      - ./:/app
     ports:
       - "8080:8080"
