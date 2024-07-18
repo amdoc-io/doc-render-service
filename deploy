@@ -1,0 +1,13 @@
+#!/bin/bash
+
+commit_message=${1:-"Changes"}
+
+docker build --platform linux/amd64 -t tungxd96/doc-render-service:drs-server .
+
+docker push tungxd96/doc-render-service:drs-server
+
+git add .
+
+git commit -m "$commit_message"
+
+git push
